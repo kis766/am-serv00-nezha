@@ -31,7 +31,7 @@ download_agent() {
         echo "$FILENAME 已存在，跳过下载"
     else
         echo "正在下载文件..."
-        FILENAME="$WORKDIR/nezha-agent_freebsd_amd64.zip"
+        FILENAME="$WORKDIR/nezha-agent_liunx_amd64.zip"
         if ! wget -q -O "$FILENAME" "$DOWNLOAD_LINK"; then
             echo "error: 文件 $FILENAME 下载失败。"
             exit
