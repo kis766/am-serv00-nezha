@@ -1,8 +1,10 @@
 #!/bin/bash
+
 # 定义颜色
 re="\033[0m"
 red="\033[1;91m"
 green="\e[1;32m"
+yellow="\e[1;33m"
 purple="\e[1;35m"
 red() { echo -e "\e[1;91m$1\033[0m"; }
 green() { echo -e "\e[1;32m$1\033[0m"; }
@@ -20,18 +22,17 @@ download_agent() {
     # 检查是否指定版本
     if [ -z "$VERSION" ]; then
         echo "未指定版本，下载最新版本..."
-        DOWNLOAD_LINK="https://github.com/kis766/am-nezha-agent/releases/latest/download/nezha-agent_linux_amd64.zip
-"
+        DOWNLOAD_LINK="https://github.com/amclubs/am-nezha-agent/releases/latest/download/nezha-agent_linux_amd64.zip"
     else
         echo "指定版本为：$VERSION"
-        DOWNLOAD_LINK="https://github.com/kis766/am-nezha-agent/releases/download/${VERSION}/nezha-agent_linux_amd64.zip"
+        DOWNLOAD_LINK="https://github.com/amclubs/am-nezha-agent/releases/download/${VERSION}/nezha-agent_linux_amd64.zip"
     fi
 
     if [ -e "$FILENAME" ]; then
         echo "$FILENAME 已存在，跳过下载"
     else
         echo "正在下载文件..."
-        FILENAME="$WORKDIR/nezha-agent_liunx_amd64.zip"
+        FILENAME="$WORKDIR/nezha-agent_linux_amd64.zip"
         if ! wget -q -O "$FILENAME" "$DOWNLOAD_LINK"; then
             echo "error: 文件 $FILENAME 下载失败。"
             exit
