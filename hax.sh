@@ -4,7 +4,7 @@
 re="\033[0m"
 red="\033[1;91m"
 green="\e[1;32m"
-yellow="\e[1;33m"
+
 purple="\e[1;35m"
 red() { echo -e "\e[1;91m$1\033[0m"; }
 green() { echo -e "\e[1;32m$1\033[0m"; }
